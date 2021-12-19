@@ -1,0 +1,14 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "LoggedIn";
+}
+
+<h1>
+    @Html.Raw(HttpContextAccessor.HttpContext.Request.Cookies["UserId"])
+
+
+
+</h1>
+<h1>LoggedIn</h1>

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<SuperStoreManagement.Models.Home>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{float Total = 0; } 
+<div id="wrap">
+    <div id="columns" class="columns_4">
+        <table class="table">   
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        SubTotal
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    int quntity;
+                    int cartId;
+                    float subtotal = item.Products.Price * item.Carts.Quanity;
+                    Total = Total + subtotal;
+                    @if (item.Carts == null || item.Carts.Quanity == 0)
+                    {
+                        quntity = 0;
+                        cartId = 0;
+                        continue;
+                    }
+                    else
+                    {
+                        quntity = item.Carts.Quanity;
+                        cartId = item.Carts.CartID;
+                        <tr>
+                            <td>
+                                <img src="@item.Products.image" style="height:100px;width:100px" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Products.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Products.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Carts.Quanity)
+                            </td>
+                            <td>
+                                @subtotal
+                            </td>
+                        </tr>
+                    }
+
+                }
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        Total
+                    </td>
+                    <td>
+                        @Total
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        @using (Html.BeginForm("Checkout", "Carts", FormMethod.Post))
+        {
+            <div>
+                <input type="submit" style="float:left; margin-left:10px" value="Checkout" class="btn btn-success btn-lg" />
+            </div>
+        }
+    </div>
+</div>
+
+

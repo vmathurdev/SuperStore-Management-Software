@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SuperStoreManagement.Models.Home>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div id="wrap">
+    <div id="columns" class="columns_4">
+        @foreach (var item in Model)
+        {
+            int quntity;
+            int cartId;
+
+            @if (item.Carts == null)
+            {
+                quntity = 0;
+                cartId = 0;
+            }
+            else
+            {
+                quntity = item.Carts.Quanity;
+                cartId = item.Carts.CartID;
+            }
+        <figure>
+            <img src=@item.Products.image style="height:150px">
+            <figcaption>@item.Products.Name</figcaption>
+            <span class="price">Price $@item.Products.Price</span>
+            <span style="margin-left:10px; margin-bottom:10px;" class="price">  Quantity: @quntity </span>
+            <div>
+                @if (item.Carts != null && quntity != 0)
+                {
+                    @using (Html.BeginForm("AddToCart", "Home", new { prodID = item.Products.prodID, quanity = quntity, cartID = cartId, add = false }, FormMethod.Post))
+                    {
+                        <input type="submit" style="float: left; margin-right: 10px" value="Sub" class="btn btn-warning btn-lg" />
+                    }
+                }
+                @if (item.Carts != null)
+                {
+
+                }
+                @using (Html.BeginForm("AddToCart", "Home", new { prodID = item.Products.prodID, quanity = quntity, cartID = cartId, add = true }, FormMethod.Post))
+                {
+                    <input type="submit" style="float:left; margin-left:10px" value="Add" class="btn btn-success btn-lg" />
+                }
+            </div>
+        </figure>
+        }
+    </div>
+</div>
+<marquee scrollamount="20">
+    <img src="https://i5.walmartimages.com/dfw/8822aef6-4c93/k2-_e5e4b6da-f5c0-488a-899a-83b31153f946.v1.jpg" width="522" height="450" />
+
+    <img src="https://canadiantire.scene7.com/is/image/CanadianTire/21351_ST_Category_Desktop_Christmas_EN?scl=1" width="600" height="450" />
+
+    <img src="https://marks.scene7.com/is/image/marksp/21_GiftGuide_Aspot_D_EN_2732x650-min?wid=2732&hei=650"  width="600" height="450"/>
+
+    <img src="https://i5.walmartimages.com/dfw/8822aef6-78fe/k2-_ae13ec48-6e60-41ed-86e1-9722488bc351.v1.jpg" width="520" height="450" />
+</marquee>

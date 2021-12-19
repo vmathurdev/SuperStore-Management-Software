@@ -1,0 +1,51 @@
+﻿body {
+    text-align: center;
+}
+
+.title {
+    font-size: 25px;
+    color: blue;
+    margin-bottom: 30px;
+}
+
+.main {
+    padding: 20px;
+    width: 40%;
+    margin: 60px auto;
+    border: 1px solid lightGrey;
+    box-shadow: -1px -4px 63px -25px rgba(0,0,0,0.30);
+}
+
+.col-sm-4 {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.paySearchInput, .paySearchInput:hover {
+    border: none;
+    border-bottom: 2px solid grey;
+    margin-bottom: 20px;
+    border-radius: 0;
+    margin-left: 20px;
+    outline: 0;
+    box-shadow: none;
+    width: 50%;
+    background: transparent;
+}
+
+.paySearchButton {
+    background-color: cornflowerblue; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px
+}
+
+    .paySearchButton:hover {
+        background-color: orange;
+        color: white;
+    }
