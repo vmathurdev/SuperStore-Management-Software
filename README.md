@@ -1,8 +1,7 @@
 ## SUPERSTORE MANAGEMENT SYSTEM (Shopper's Delight) - SOFTWARE DEV PROJECT
 
-[![author](https://img.shields.io/badge/author-Akshay%20Kumar-ff69b4.svg?style=flat-square)](https://www.linkedin.com/in/akshay-kumar-2b1a5612b/)
 [![author](https://img.shields.io/badge/author-Vinamra%20Mathur-ff69b4.svg?style=flat-square)](https://www.linkedin.com/in/vinamra-mathur/)
-[![author](https://img.shields.io/badge/author-Viren%20Varasadiya-ff69b4.svg?style=flat-square)](https://www.linkedin.com/in/virenvarasadiya/)
+
 
 
 ### ABOUT THE PROJECT
@@ -14,9 +13,9 @@
 
 ### AUTHORS
 
-- [@AkshayKumar](https://www.linkedin.com/in/akshay-kumar-2b1a5612b/) - **AKSHAY KUMAR**
+
 - [@VinamraMathur](https://github.com/manishhundekar) -                 **VINAMRA MATHUR**
-- [@VirenVarasadiya](https://www.linkedin.com/in/virenvarasadiya/) -    **VIREN VARASADIYA**
+
 
 ### OBJECTIVES
 1. Setup a Code first application for an E-commerce application
